@@ -60,3 +60,63 @@ This project is a **full-stack banking web application** designed to simulate th
 - `Services/`: Contain core logic for loan processing, transfers, etc.
 - `HttpReqObject/`: Contain DTOs for various requests like editing profile, transferring money.
 - `Migrations/`: EF Core migrations to manage DB schema over time.
+
+## 🌿 Branch Structure
+
+This repository follows a clear separation of concerns through Git branches:
+
+- **`frontend` branch**: Contains the Angular-based frontend code.
+- **`backend` branch**: Contains the ASP.NET Core backend implementation.
+
+Ensure you check out the correct branch depending on the part of the application you're working with.
+
+---
+
+## 📡 API Endpoints
+
+The backend exposes a RESTful API under three major categories: `Bank`, `Loan`, and `Transfer`.
+
+### 🏦 Bank API
+
+| Method | Endpoint           | Description                        |
+|--------|--------------------|------------------------------------|
+| GET    | `/bank/allAcc`     | Get all bank accounts              |
+| POST   | `/bank/getAcc`     | Fetch details for a specific account |
+| POST   | `/bank/createAcc`  | Create a new bank account          |
+| POST   | `/bank/deposit`    | Deposit money into an account      |
+| POST   | `/bank/withdraw`   | Withdraw money from an account     |
+| GET    | `/bank/alreadyAcc` | Check if account already exists    |
+| PUT    | `/bank/editprofile`| Edit user profile information      |
+| DELETE | `/bank/delete`     | Delete a bank account              |
+
+---
+
+### 🧾 Loan API
+
+| Method | Endpoint                | Description                          |
+|--------|-------------------------|--------------------------------------|
+| POST   | `/loan/homeloan`        | Apply for a home loan                |
+| POST   | `/loan/personalLoan`    | Apply for a personal loan            |
+| POST   | `/loan/educationLoan`   | Apply for an education loan          |
+| GET    | `/loan/getAllRequests`  | Get all loan requests                |
+| POST   | `/loan/approve`         | Approve a loan                       |
+| POST   | `/loan/reject`          | Reject a loan                        |
+| GET    | `/loan/getNumbers`      | Get loan statistics or identifiers   |
+| GET    | `/loan/history`         | View loan history                    |
+| POST   | `/loan/payment`         | Make a loan payment                  |
+| GET    | `/loan/payment-history` | Get payment history for a loan       |
+
+---
+
+### 🔄 Transfer API
+
+| Method | Endpoint                   | Description                         |
+|--------|----------------------------|-------------------------------------|
+| POST   | `/fromtoAcc`               | Transfer money between two accounts |
+| GET    | `/transfer/getAllTransactions` | View all past transactions      |
+
+---
+
+## 🔁 Note
+
+All POST endpoints typically accept JSON payloads. Be sure to include authentication headers if your backend uses JWT or another auth mechanism.
