@@ -1,0 +1,44 @@
+<div
+  class="w-full my-10 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 px-6"
+  *ngIf="myAcc; else NoAccSituation"
+>
+  <div
+    class="bg-gray-800 hover:bg-gray-700 transition text-white px-8 py-16 rounded-xl shadow-md flex items-center justify-center cursor-pointer"
+    [routerLink]="['/home-loan']"
+  >
+    <p class="text-lg font-semibold">Home Loan</p>
+  </div>
+
+  <div
+    class="bg-gray-800 hover:bg-gray-700 transition text-white px-8 py-16 rounded-xl shadow-md flex items-center justify-center cursor-pointer"
+    [routerLink]="['/education-loan']"
+  >
+    <p class="text-lg font-semibold">Education Loan</p>
+  </div>
+
+  <div
+    class="bg-gray-800 hover:bg-gray-700 transition text-white px-8 py-16 rounded-xl shadow-md flex items-center justify-center cursor-pointer"
+    [routerLink]="['/personal-loan']"
+  >
+    <p class="text-lg font-semibold">Personal Loan</p>
+  </div>
+  
+  <div
+    class="bg-gray-800 hover:bg-gray-700 transition text-white px-8 py-16 rounded-xl shadow-md flex items-center justify-center cursor-pointer"
+    [routerLink]="['/loan-history']"
+  >
+    <p class="text-lg font-semibold">Loan History</p>
+  </div>
+</div>
+
+<ng-template #NoAccSituation>
+  <div class="flex flex-col items-center justify-center py-16 text-center">
+    <p class="text-gray-300 text-lg mb-4">No account found.</p>
+    <button
+      [routerLink]="['/account']"
+      class="bg-indigo-600 hover:bg-indigo-700 transition text-white px-6 py-2 rounded-lg font-medium"
+    >
+      Navigate to Add Account
+    </button>
+  </div>
+</ng-template>

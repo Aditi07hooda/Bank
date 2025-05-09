@@ -1,0 +1,22 @@
+<div class="max-w-4xl mx-auto my-10">
+  <h1 class="text-3xl font-semibold text-center mb-12">Transaction History</h1>
+
+  <table class="min-w-full table-auto bg-gray-800 p-6 rounded-lg shadow-lg">
+    <thead>
+      <tr class="bg-gray-700">
+        <th class="py-2 px-4 text-left text-sm font-medium text-gray-300">ID</th>
+        <th class="py-2 px-4 text-left text-sm font-medium text-gray-300">Transaction Type</th>
+        <th class="py-2 px-4 text-left text-sm font-medium text-gray-300">Amount</th>
+        <th class="py-2 px-4 text-left text-sm font-medium text-gray-300">Date</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr class="border-b border-gray-600" *ngFor="let t of transactionList">
+        <td class="py-2 px-4 text-sm text-gray-200">{{t.id | number}}</td>
+        <td class="py-2 px-4 text-sm text-gray-200">{{t.transactionType}}</td>
+        <td class="py-2 px-4 text-sm text-gray-200">{{t.amount | currency : 'INR'}}</td>
+        <td class="py-2 px-4 text-sm text-gray-200">{{t.transactionDate | date}}</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
