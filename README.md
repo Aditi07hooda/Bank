@@ -61,6 +61,32 @@ This project is a **full-stack banking web application** designed to simulate th
 - `HttpReqObject/`: Contain DTOs for various requests like editing profile, transferring money.
 - `Migrations/`: EF Core migrations to manage DB schema over time.
 
+---
+
+## 📂 Project Structure (Simplified)
+
+```
+frontend/
+  ├── src/
+  │   ├── app/
+  │   └── assets/
+  ├── angular.json
+  └── package.json
+
+backend/
+  ├── WebApplication1/
+  │   ├── Controllers/
+  │   ├── Data/
+  │   ├── HttpReqObject/
+  │   ├── Models/
+  │   ├── Services/
+  │   ├── Properties/
+  │   └── Program.cs
+  └── WebApplication1.sln
+```
+
+---
+
 ## 🌿 Branch Structure
 
 This repository follows a clear separation of concerns through Git branches:
@@ -120,3 +146,88 @@ The backend exposes a RESTful API under three major categories: `Bank`, `Loan`, 
 ## 🔁 Note
 
 All POST endpoints typically accept JSON payloads. Be sure to include authentication headers if your backend uses JWT or another auth mechanism.
+
+
+## ▶️ How to Run the Project Locally
+
+This project is divided into two separate Git branches for better modularity:
+
+- `frontend` branch (Angular App)
+- `backend` branch (ASP.NET Core API)
+
+Follow the steps below to set up both locally on your machine.
+
+### 🔹 Frontend Setup (Angular)
+
+> 📍 Branch: `frontend`
+
+1. **Clone the frontend branch:**
+   ```bash
+   git clone -b frontend <your-repository-url>
+   ```
+
+2. **Navigate to the frontend project directory:**
+   ```bash
+   cd frontend
+   ```
+
+3. **Install the dependencies:**
+   ```bash
+   npm install
+   ```
+
+4. **Run the Angular development server:**
+   ```bash
+   ng serve
+   ```
+
+5. **Open your browser and go to:**
+   ```
+   http://localhost:4200
+   ```
+
+### 🔹 Backend Setup (ASP.NET Core)
+
+> 📍 Branch: `backend`
+
+1. **Clone the backend branch:**
+   ```bash
+   git clone -b backend <your-repository-url>
+   ```
+
+2. **Navigate to the backend project directory:**
+   ```bash
+   cd backend/WebApplication1/WebApplication1
+   ```
+
+3. **Restore NuGet packages:**
+   ```bash
+   dotnet restore
+   ```
+
+4. **(Optional) Apply database migrations (if using EF Core with a DB):**
+   ```bash
+   dotnet ef database update
+   ```
+
+5. **Run the backend server:**
+   ```bash
+   dotnet run
+   ```
+
+6. **The API should now be accessible at:**
+   ```
+   https://localhost:5001
+   http://localhost:5000
+   ```
+
+---
+
+### 🧪 Testing APIs
+
+You can test the APIs using tools like:
+
+- [Postman](https://www.postman.com/)
+- Or directly from the frontend
+
+Ensure both frontend and backend are running concurrently for full functionality.
